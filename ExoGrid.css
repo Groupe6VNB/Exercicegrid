@@ -1,0 +1,85 @@
+
+/* Applique la propriété box-sizing à tous les éléments pour inclure la bordure et le padding dans les dimensions */
+* {
+   box-sizing: border-box;
+}
+
+/* Centrage horizontal du contenu dans la page */
+body {
+   display: flex; /* Utilisation de Flexbox pour la mise en page */
+   justify-content: center; /* Centre horizontalement les éléments enfants */
+}
+
+/* Définition de la grille principale */
+.grid {
+   display: grid; /* Utilisation de la grille CSS */
+   gap: 5px; /* Espacement de 5px entre chaque cellule de la grille */
+   background-color: black; /* Couleur de fond noire pour la grille */
+   width: 800px; /* Largeur de la grille */
+   height: 600px; /* Hauteur de la grille */
+   padding: 3px; /* Espacement interne de 3px autour de la grille */
+   grid-template-areas: /* Définit les zones de la grille */
+   /* Chaque ligne représente une rangée de la grille */
+"w1 w1 w2 w2 w2 w2 w2 w2 w2 w2 w2 w2 w2 w2 w3 w3 w3 w3 w3 w3 w3 w3 w3 w3 w3 w3 w4 w4 y1 y1"
+"w1 w1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 w5 w5 w5 w5 w5 b2 b2 b2 b2 b2 b2 b2 w4 w4 y1 y1"
+"w1 w1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 w5 w5 w5 w5 w5 b2 b2 b2 b2 b2 b2 b2 w4 w4 y1 y1"
+"w1 w1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 w5 w5 w5 w5 w5 b2 b2 b2 b2 b2 b2 b2 w4 w4 y1 y1"
+".   . w6 w6 w6 w6 .   . w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 r1 r1 r1 r1 r1 r1 r2 r2 w4 w4 y1 y1"
+".   . w6 w6 w6 w6 .   . w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 r1 r1 r1 r1 r1 r1 r2 r2 w4 w4 y1 y1"
+".   . w6 w6 w6 w6 .   . w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 r1 r1 r1 r1 r1 r1 r2 r2 w4 w4 y1 y1"
+".   . w6 w6 w6 w6 .   . w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 r1 r1 r1 r1 r1 r1 r2 r2 w4 w4 y1 y1"
+".   . w6 w6 w6 w6 .   . w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 r1 r1 r1 r1 r1 r1 r2 r2 w4 w4 y1 y1"
+".   . w6 w6 w6 w6 .   . w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 r1 r1 r1 r1 r1 r1 r2 r2 w4 w4 y1 y1"
+".   . w6 w6 w6 w6 .   . w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 r1 r1 r1 r1 r1 r1 r2 r2 w4 w4 y1 y1"
+".   . w6 w6 w6 w6 .   . y3 y3 r3 r3 r3 r3 b3 b3 b3 b3 w9 w9 w9 w9 w9 w9 k1 k1 .  .  .   ."
+".   . w6 w6 w6 w6 .   . y3 y3 r3 r3 r3 r3 b3 b3 b3 b3 w9 w9 w9 w9 w9 w9 k1 k1 .  .  .   ."
+".   . w6 w6 w6 w6 .   . y3 y3 r3 r3 r3 r3 b3 b3 b3 b3 w9 w9 w9 w9 w9 w9 k1 k1 .  .  .   ."
+"k2 k2 r4 r4 r4 r4 .   . y4 y4 k3 k3 k3 k3 k3 k3 k3 k4 k4 k4 k4 b4 b4 b4 y5 y5 k5 k5 k5 k5"
+"k2 k2 r4 r4 r4 r4 .   . y4 y4 k3 k3 k3 k3 k3 k3 k3 k4 k4 k4 k4 b4 b4 b4 y5 y5 k5 k5 k5 k5"
+"k2 k2 r4 r4 r4 r4 .   . y4 y4 k3 k3 k3 k3 k3 k3 k3 k4 k4 k4 k4 b4 b4 b4 y5 y5 k5 k5 k5 k5"
+"k2 k2 r4 r4 r4 r4 .   . y4 y4 k3 k3 k3 k3 k3 k3 k3 k4 k4 k4 k4 b4 b4 b4 y5 y5 k5 k5 k5 k5"
+"k2 k2 r4 r4 r4 r4 .   . y4 y4 k3 k3 k3 k3 k3 k3 k3 k4 k4 k4 k4 b4 b4 b4 y5 y5 k5 k5 k5 k5"
+"k2 k2 r4 r4 r4 r4 .   . y4 y4 r5 r5 r5 r5 .  .  .  .  .  .  .  .  k7 k7 k7 k7 k7 k7 k7 k7"
+"k2 k2 r4 r4 r4 r4 .   . y4 y4 r5 r5 r5 r5 .  .  .  .  .  .  .  .  k7 k7 k7 k7 k7 k7 k7 k7"
+"k6 k6 k6 k6 k6 k6 k6 k6 y4 y4 r5 r5 r5 r5 .  .  .  .  .  .  .  .  k7 k7 k7 k7 k7 k7 k7 k7"
+"k6 k6 k6 k6 k6 k6 k6 k6 y4 y4 r5 r5 r5 r5 .  .  .  .  .  .  .  .  k7 k7 k7 k7 k7 k7 k7 k7";
+}
+
+/* les couleurs de fond pour les différentes cellules */
+.white { background-color: rgb(243, 239, 239); } /* Couleur blanche */
+.yellow { background-color: rgba(255, 213, 0, 0.862); } /* Couleur jaune */
+.blue { background-color: rgba(55, 0, 255, 0.453); } /* Couleur bleue */
+.red { background-color: rgba(255, 0, 0, 0.909); } /* Couleur rouge */
+
+/* Les zones de grille aux identifiants respectifs */
+#w1 { grid-area: w1; } /* Zone de grille w1 */
+#w2 { grid-area: w2; } /* Zone de grille w2 */
+#w3 { grid-area: w3; } /* Zone de grille w3 */
+#w4 { grid-area: w4; } /* Zone de grille w4 */
+#w5 { grid-area: w5; } /* Zone de grille w5 */
+#w6 { grid-area: w6; } /* Zone de grille w6 */
+#w7 { grid-area: w7; } /* Zone de grille w7 */
+#w8 { grid-area: w8; } /* Zone de grille w8 */
+#w9 { grid-area: w9; } /* Zone de grille w9 */
+#k1 { grid-area: k1; } /* Zone de grille k1 */
+#k2 { grid-area: k2; } /* Zone de grille k2 */
+#k3 { grid-area: k3; } /* Zone de grille k3 */
+#k4 { grid-area: k4; } /* Zone de grille k4 */
+#k5 { grid-area: k5; } /* Zone de grille k5 */
+#k6 { grid-area: k6; } /* Zone de grille k6 */
+#k7 { grid-area: k7; } /* Zone de grille k7 */
+#y1 { grid-area: y1; } /* Zone de grille y1 */
+#y2 { grid-area: y2; } /* Zone de grille y2 */
+#y3 { grid-area: y3; } /* Zone de grille y3 */
+#y4 { grid-area: y4; } /* Zone de grille y4 */
+#y5 { grid-area: y5; } /* Zone de grille y5 */
+#b1 { grid-area: b1; } /* Zone de grille b1 */
+#b2 { grid-area: b2; } /* Zone de grille b2 */
+#b3 { grid-area: b3; } /* Zone de grille b3 */
+#b4 { grid-area: b4; } /* Zone de grille b4 */
+#b5 { grid-area: b5; } /* Zone de grille b5 */
+#r1 { grid-area: r1; } /* Zone de grille r1 */
+#r2 { grid-area: r2; } /* Zone de grille r2 */
+#r3 { grid-area: r3; } /* Zone de grille r3 */
+#r4 { grid-area: r4; } /* Zone de grille r4 */
+#r5 { grid-area: r5; } /* Zone de grille r5 */
